@@ -1,5 +1,7 @@
-import 'package:bcyleapp/widget/CustomIconContainer.dart';
+
+import 'package:bcyleapp/view/widget/CustomIconContainer.dart';
 import 'package:flutter/material.dart';
+
 
 Widget customCard(BuildContext context,
     Color color, double boxWidth, double boxHeight, Widget widget) {

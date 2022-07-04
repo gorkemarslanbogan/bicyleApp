@@ -1,7 +1,7 @@
-import 'package:bcyleapp/widget/card.dart';
+import 'package:bcyleapp/view/widget/card.dart';
 import 'package:flutter/material.dart';
 import 'package:bcyleapp/managmentUtility/AppUtility.dart';
-import '../utility/textUtility/textUtility.dart';
+import '../../utility/textUtility.dart';
 import '../widget/customCircleAvatar.dart';
 import 'mainScreenWidgets.dart';
 

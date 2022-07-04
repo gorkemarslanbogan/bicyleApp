@@ -1,5 +1,5 @@
 import 'package:bcyleapp/managmentUtility/AppUtility.dart';
-import 'package:bcyleapp/utility/textUtility/textUtility.dart';
+import 'package:bcyleapp/utility/textUtility.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import '../widget/CustomIconContainer.dart';
