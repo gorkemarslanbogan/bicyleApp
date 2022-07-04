@@ -7,7 +7,8 @@
         {
             "name": "bcyleapp",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "program": "lib/view/main.dart",
         },
         {
             "name": "bcyleapp (profile mode)",
