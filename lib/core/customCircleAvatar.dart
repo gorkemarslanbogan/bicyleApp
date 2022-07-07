@@ -13,9 +13,9 @@ Padding customCircleAvatarWithDottedBorderPackage() {
           color: const Color.fromARGB(255, 53, 53, 53),
           padding: const EdgeInsets.all(3),
           child: const CircleAvatar(
-            backgroundImage: AssetImage(
+            backgroundImage: const AssetImage(
               "assets/images/profile.jpg",
-            ),
+            ) as ImageProvider,
           )),
     );
   }

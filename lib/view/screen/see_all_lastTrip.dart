@@ -12,7 +12,7 @@ class AllLastTrip extends StatelessWidget with NavigatorManagment {
 
   @override
   Widget build(BuildContext context) {
-    return appScaffold(widget: const Center(child: LastTripList(),), LeadingWidget: IconButton(icon: const Icon(Icons.arrow_back_ios_new_rounded), onPressed: (){
+    return appScaffold(widget: Center(child: LastTripList(),), LeadingWidget: IconButton(icon: Icon(Icons.arrow_back_ios_new_rounded), onPressed: (){
       NavigatePush(context, HomeScreen());
       },),);
   }
