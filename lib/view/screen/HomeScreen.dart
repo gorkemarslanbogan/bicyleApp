@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: appScaffold(widget: const _HomeScreenWidgetTree(), draverWidget: Drawer(child: Center(child: Text("Hello World"))),));
+        home: appScaffold(widget: const _HomeScreenWidgetTree(), draverWidget: const Drawer(child: Center(child: Text("Hello World"))),));
   }
 }
 
@@ -89,7 +89,7 @@ class _lastTripInformation extends StatelessWidget with NavigatorManagment {
                     )),
         TextButton(
             onPressed: () {
-              NavigatePush(context,  AllLastTrip());
+              NavigatePush(context,  const AllLastTrip());
             },
             child: Text(
               "See All",
