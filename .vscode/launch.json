@@ -8,7 +8,7 @@
             "name": "bcyleapp",
             "request": "launch",
             "type": "dart",
-            "program": "lib/view/main.dart",
+            "program": "C:/Users/HP/Desktop/flutterornekleri/bcyleapp/lib/main.dart",
         },
         {
             "name": "bcyleapp (profile mode)",

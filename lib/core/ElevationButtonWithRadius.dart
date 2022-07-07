@@ -1,24 +1,25 @@
-import 'package:bcyleapp/managmentUtility/AppUtility.dart';
-import 'package:bcyleapp/view/screen/mainScreen.dart';
+import 'package:bcyleapp/product/NavigatorManagment.dart';
 import 'package:flutter/material.dart';
-import '../../utility/textUtility.dart';
 
-class customButtonWidget extends StatelessWidget with NavigatorManagment{
-  const customButtonWidget({
+class customButtonWidget extends StatelessWidget with NavigatorManagment {
+  customButtonWidget({
     Key? key,
+    required this.title, required this.onPressed, required this.textPadding,
   }) : super(key: key);
-
+  final String title;
+  final void Function()? onPressed;
+  final EdgeInsets textPadding;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 45.0, vertical: 20),
-        child: Text(FirsScreenTextUtility.ButtonText,
+        padding: textPadding,
+        child: Text(title,
             style: Theme.of(context).textTheme.headline5?.copyWith(
                   color: Colors.white,
                 )),
       ),
-      onPressed: (){NavigatePush(context, HomeScreen());} ,
+      onPressed: onPressed,
       style: OutlinedButton.styleFrom(
           backgroundColor: const Color.fromARGB(255, 31, 31, 31),
           shape: const RoundedRectangleBorder(

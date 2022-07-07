@@ -1,19 +1,25 @@
 import 'package:bcyleapp/utility/textUtility.dart';
-import 'package:bcyleapp/view/screen/mainScreen.dart';
-import 'package:bcyleapp/view/widget/mainScrennColumn.dart';
+import 'package:bcyleapp/view/screen/HomeScreen.dart';
+import 'package:bcyleapp/core/mainScrennColumn.dart';
 import 'package:flutter/material.dart';
-import 'package:bcyleapp/managmentUtility/AppUtility.dart';
+import 'package:bcyleapp/product/NavigatorManagment.dart';
+import 'package:flutter/services.dart';
 
-void main() => runApp(
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
+      .then((_) {
+    runApp(
       const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: MyApp(),
+        home: MyApp(),  
       ),
     );
+  });
+}
 
 class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
-
   @override
   State<MyApp> createState() => _MyAppState();
 }
