@@ -11,9 +11,9 @@ class lastTripCardBuilder extends StatelessWidget {
   }) : super(key: key);
   List<MyTrip> item = [MyTrip("Family Walk", 4, "Navy Park", "oct 12.2022"),
 MyTrip("Family Walk", 4, "Navy Park", "oct 12.2022"),
-MyTrip("Run", 4, "Centerl Park", "nov 09.2022"),
+MyTrip("Run", 6, "Centerl Park", "nov 09.2022"),
 MyTrip("Bcyle Drive", 4, "Miami Park", "sep 24.2022"),
-MyTrip("Walk", 4, "Orlando Center", "dec 22.2023"),
+MyTrip("Walk", 2, "Orlando Center", "dec 22.2023"),
 ];
   Icon _iconBuilder(String tripName) {
     return Icon((tripName.contains("Walk")) ? Icons.directions_walk

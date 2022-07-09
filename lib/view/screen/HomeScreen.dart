@@ -53,9 +53,7 @@ class _HomeScreenWidgetTree extends StatelessWidget {
               const ColumnWidgetHomeScreen(),
               SizedBox(
                   height: ScreenSize.pageHeight! * 0.3,
-                  child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: custom_cards())),
+                  child: custom_cards()),
               const SizedBox(
                 height: 20,
               ),

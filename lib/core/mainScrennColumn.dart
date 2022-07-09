@@ -21,7 +21,7 @@ class mainColumnWidget extends StatelessWidget with FirsScreenTextUtility,Screen
        SizedBox(
         height: ScreenSize.dynamicHeight(0.09)
       ),
-      _mainPageTextWidget(title: FirsScreenTextUtility.makeYourRoute, fontweight: FontWeight.w400),
+      const _mainPageTextWidget(title: FirsScreenTextUtility.makeYourRoute, fontweight: FontWeight.w400),
       SizedBox(
         height: ScreenSize.dynamicHeight(0.02),
       ),

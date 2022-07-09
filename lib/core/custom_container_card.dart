@@ -6,10 +6,24 @@ import 'custom_container.dart';
 
 class customContainerCard extends StatelessWidget {
   const customContainerCard(
-      {Key? key, required this.colors, required this.icon})
+      {Key? key,
+      required this.colors,
+      required this.tripName,
+      required this.location,
+      required this.milInt})
       : super(key: key);
   final Color colors;
-  final IconData icon;
+  final tripName;
+  final location;
+  final milInt;
+  IconData _iconBuilder(String tripName) {
+    return (tripName.contains("Walk"))
+        ? Icons.directions_walk
+        : (tripName.contains("Run"))
+            ? Icons.run_circle_sharp
+            : Icons.directions_bike;
+  }
+
   @override
   Widget build(BuildContext context) {
     ScreenSize().init(context);
@@ -20,7 +34,10 @@ class customContainerCard extends StatelessWidget {
           color: colors,
           widget: _columnWidget(
             colors: colors,
-            icon: icon,
+            icon: _iconBuilder(tripName),
+            location: location,
+            milInt: milInt,
+            tripName: tripName,
           )),
     );
   }
@@ -31,9 +48,16 @@ class _columnWidget extends StatelessWidget {
     Key? key,
     required this.colors,
     required this.icon,
+    required this.tripName,
+    required this.location,
+    required this.milInt,
   }) : super(key: key);
   final Color colors;
+  final tripName;
+  final location;
+  final milInt;
   final IconData icon;
+  static const miles = " Miles";
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -48,14 +72,13 @@ class _columnWidget extends StatelessWidget {
           ),
         ),
         Text(
-          
-          "Family Walk",
+          tripName,
           style: GoogleFonts.poppins(
             color: Colors.black,
           ),
         ),
         Text(
-          "Navya Park oct",
+          location,
           style: Theme.of(context).textTheme.subtitle2,
         ),
         SizedBox(
@@ -67,7 +90,7 @@ class _columnWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(7)),
               child: Center(
                 child: Text(
-                  "4.1 Miles",
+                  milInt + miles,
                   style: Theme.of(context).textTheme.subtitle2?.copyWith(
                         color: Colors.white,
                       ),
