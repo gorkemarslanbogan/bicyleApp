@@ -1,21 +1,29 @@
+import 'package:bcyleapp/product/imageUtility.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
+class customCircleAvatarWithDottedBorderPackage extends StatelessWidget {
+  const customCircleAvatarWithDottedBorderPackage({Key? key}) : super(key: key);
 
-
-Padding customCircleAvatarWithDottedBorderPackage() {
+  @override
+  Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+      padding: paddingUtility.circleAvatarPadding,
       child: DottedBorder(
           borderType: BorderType.Circle,
           strokeWidth: 0.8,
           dashPattern: const [6, 3, 2, 3],
           color: const Color.fromARGB(255, 53, 53, 53),
           padding: const EdgeInsets.all(3),
-          child: const CircleAvatar(
-            backgroundImage: const AssetImage(
-              "assets/images/profile.jpg",
+          child: CircleAvatar(
+            backgroundImage: AssetImage(
+              imagePath.jpg("profile"),
             ) as ImageProvider,
           )),
     );
   }
+}
+
+class paddingUtility {
+  static final EdgeInsets circleAvatarPadding = EdgeInsets.symmetric(vertical: 5, horizontal: 15);
+}

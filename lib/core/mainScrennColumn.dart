@@ -1,3 +1,4 @@
+import 'package:bcyleapp/product/imageUtility.dart';
 import 'package:bcyleapp/utility/screen_size_class.dart';
 import 'package:bcyleapp/view/screen/HomeScreen.dart';
 import 'package:bcyleapp/product/NavigatorManagment.dart';
@@ -5,8 +6,7 @@ import 'package:flutter/material.dart';
 import 'ElevationButtonWithRadius.dart';
 import '../utility/textUtility.dart';
 
-
-class mainColumnWidget extends StatelessWidget with FirsScreenTextUtility, NavigatorManagment {
+class mainColumnWidget extends StatelessWidget with FirsScreenTextUtility,ScreenSize {
   mainColumnWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -14,37 +14,25 @@ class mainColumnWidget extends StatelessWidget with FirsScreenTextUtility, Navig
     final List<Widget> columnItems = [
       Expanded(
         child: Image.asset(
-          "assets/images/bicyle.jpg",
+          imagePath.jpg("bicyle"),
           fit: BoxFit.fitHeight,
         ),
       ),
        SizedBox(
-        height: ScreenSize.pageHeight! * 0.09,
+        height: ScreenSize.dynamicHeight(0.09)
       ),
-      Text(
-        FirsScreenTextUtility.makeYourRoute,
-        style: Theme.of(context).textTheme.headline4?.copyWith(
-              color: Colors.black,
-              fontWeight: FontWeight.w300,
-            ),
-      ),
+      _mainPageTextWidget(title: FirsScreenTextUtility.makeYourRoute, fontweight: FontWeight.w400),
       SizedBox(
-        height: ScreenSize.pageHeight! * 0.02,
+        height: ScreenSize.dynamicHeight(0.02),
       ),
-      Text(
-        FirsScreenTextUtility.route,
-        style: Theme.of(context).textTheme.headline4?.copyWith(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-            ),
-      ),
+     _mainPageTextWidget(title: FirsScreenTextUtility.route, fontweight: FontWeight.bold),
       Expanded(
         child: Center(
             child: customButtonWidget(
           title: FirsScreenTextUtility.ButtonText,
-          textPadding: EdgeInsets.symmetric(vertical: ScreenSize.pageHeight! * 0.02, horizontal: ScreenSize.pageWidth! * 0.2),
+          textPadding: paddingUtility._buttonSymmetricPadding,
           onPressed: () {
-        NavigatePush(context, HomeScreen());
+        NavigatorManagment.NavigatePush(context, HomeScreen());
           },
         )),
       ),
@@ -55,4 +43,28 @@ class mainColumnWidget extends StatelessWidget with FirsScreenTextUtility, Navig
       children: columnItems,
     );
   }
+}
+
+class _mainPageTextWidget extends StatelessWidget {
+  const _mainPageTextWidget({
+    Key? key,
+    required this.title, required this.fontweight,
+  }) : super(key: key);
+
+  final String title;
+  final FontWeight? fontweight;
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      title,
+      style: Theme.of(context).textTheme.headline4?.copyWith(
+            color: Colors.black,
+            fontWeight: fontweight,
+          ),
+    );
+  }
+}
+
+class paddingUtility{
+  static final EdgeInsets _buttonSymmetricPadding = EdgeInsets.symmetric(vertical: ScreenSize.dynamicHeight(0.02), horizontal: ScreenSize.dynamicWitdh(0.2));
 }

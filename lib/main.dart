@@ -24,7 +24,7 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> with NavigatorManagment {
+class _MyAppState extends State<MyApp>{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -54,7 +54,7 @@ class _MyAppState extends State<MyApp> with NavigatorManagment {
                 style: Theme.of(context).textTheme.headline5?.copyWith(
                     color: Colors.black87, fontWeight: FontWeight.w300)),
             onPressed: () {
-              NavigatePush(context, HomeScreen());
+              NavigatorManagment.NavigatePush(context, HomeScreen());
             },
           ),
         ),

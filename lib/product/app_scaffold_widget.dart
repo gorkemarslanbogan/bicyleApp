@@ -34,7 +34,7 @@ final Widget? LeadingWidget;
       appBar: AppBar(
         leading: LeadingWidget,
         iconTheme: const IconThemeData(color: Colors.black),
-        actions: [
+        actions: const [
           customCircleAvatarWithDottedBorderPackage(),
         ],
       ),

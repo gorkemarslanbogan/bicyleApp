@@ -2,14 +2,14 @@ import 'package:bcyleapp/utility/screen_size_class.dart';
 import 'package:bcyleapp/view/screen/see_all_lastTrip.dart';
 import 'package:flutter/material.dart';
 import 'package:bcyleapp/product/NavigatorManagment.dart';
+import '../../core/custom_card_trips.dart';
 import '../../product/app_scaffold_widget.dart';
-import '../../core/last_trip_list.dart';
 import '../../core/singleChild_custom_cards.dart';
+import '../../product/draver_widget.dart';
 import '../../utility/textUtility.dart';
 import '../../core/HomeScreenWidget.dart';
 
-class HomeScreen extends StatefulWidget
-    with NavigatorManagment, HomeScreenTextUtility {
+class HomeScreen extends StatefulWidget with HomeScreenTextUtility {
   HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           scaffoldBackgroundColor: Colors.white,
         ),
-        home: appScaffold(widget: const _HomeScreenWidgetTree(), draverWidget: Drawer(child: Center(child: Text("Hello World"))),));
+        home: appScaffold(widget: const _HomeScreenWidgetTree(), draverWidget: const CustomDrawerWidget()));
   }
 }
 
@@ -61,7 +61,8 @@ class _HomeScreenWidgetTree extends StatelessWidget {
               ),
               const _lastTripInformation(),
               SizedBox(
-                  height: ScreenSize.pageHeight! * 0.5, child: const LastTripList())
+                height: ScreenSize.dynamicHeight(0.35),
+                child: lastTripCardBuilder()),
             ],
           ),
         ),
@@ -70,7 +71,7 @@ class _HomeScreenWidgetTree extends StatelessWidget {
   }
 }
 
-class _lastTripInformation extends StatelessWidget with NavigatorManagment {
+class _lastTripInformation extends StatelessWidget{
   const _lastTripInformation({
     Key? key,
   }) : super(key: key);
@@ -89,7 +90,7 @@ class _lastTripInformation extends StatelessWidget with NavigatorManagment {
                     )),
         TextButton(
             onPressed: () {
-              NavigatePush(context,  AllLastTrip());
+              NavigatorManagment.NavigatePush(context,  const AllLastTrip());
             },
             child: Text(
               "See All",
