@@ -25,22 +25,13 @@ List<Color> colorSheme = [
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.zero,
-     // shrinkWrap: true,
       scrollDirection: Axis.horizontal,
       itemCount: 3,
       itemBuilder: ((context, index) {
       return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 5),
         child: customContainerCard(colors:  colorSheme[index],tripName: item[index].tripTittle,milInt: item[index].miles.toString(),location: item[index].location, ),
       );
     }));
   }
 }
-
-
-// const customContainerCard(colors:  Colors.blueAccent, icon: Icons.directions_walk,),
-//         Padding(
-//           padding:  const EdgeInsets.symmetric(horizontal: 10),
-//           child: customContainerCard(colors:  Colors.indigo.shade400, icon: Icons.directions_bike,),
-//         ),
-//         customContainerCard(colors:Colors.yellow.shade400, icon: Icons.run_circle_sharp,),

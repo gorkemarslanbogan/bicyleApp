@@ -45,21 +45,21 @@ class _HomeScreenWidgetTree extends StatelessWidget {
     return Padding(
       padding: PaddingUtility().generalSymetricPadding,
       child: SizedBox(
-        height: ScreenSize.pageHeight!,
+        height: ScreenSize.dynamicHeight(),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const ColumnWidgetHomeScreen(),
               SizedBox(
-                  height: ScreenSize.pageHeight! * 0.3,
+                  height: ScreenSize.dynamicHeight(value: 0.3),
                   child: custom_cards()),
               const SizedBox(
                 height: 20,
               ),
               const _lastTripInformation(),
               SizedBox(
-                height: ScreenSize.dynamicHeight(0.35),
+                height: ScreenSize.dynamicHeight(value: 0.35),
                 child: lastTripCardBuilder()),
             ],
           ),

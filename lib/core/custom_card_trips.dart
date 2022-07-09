@@ -22,7 +22,7 @@ MyTrip("Walk", 2, "Orlando Center", "dec 22.2023"),
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       padding: EdgeInsets.zero,
       itemCount: item.length,
       itemBuilder: ((context, index) {

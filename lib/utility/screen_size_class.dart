@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class ScreenSize {
 late MediaQueryData _mediaQuery;  
 static  double? pageHeight;
@@ -13,13 +12,13 @@ static  double? pageWidth;
  }
 
  
- static double dynamicHeight (double? value){
-    if(value != null) return (pageHeight! * value);
-    return pageHeight!;
+ static double dynamicHeight ({double? value}){
+    if(value != null) {return (pageHeight! * value);}
+    else{return pageHeight!;}
  }
-  static double dynamicWitdh (double? value){
-    if(value != null) return (pageWidth! * value);
-    return pageWidth!;
+  static double dynamicWitdh ({double? value}){
+    if(value != null) {return (pageWidth! * value);}
+    else{return pageWidth!;}
  }
 
 }

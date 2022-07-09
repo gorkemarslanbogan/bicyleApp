@@ -19,13 +19,13 @@ class mainColumnWidget extends StatelessWidget with FirsScreenTextUtility,Screen
         ),
       ),
        SizedBox(
-        height: ScreenSize.dynamicHeight(0.09)
+        height: ScreenSize.dynamicHeight(value: 0.09)
       ),
       const _mainPageTextWidget(title: FirsScreenTextUtility.makeYourRoute, fontweight: FontWeight.w400),
       SizedBox(
-        height: ScreenSize.dynamicHeight(0.02),
+        height: ScreenSize.dynamicHeight(value: 0.02),
       ),
-     _mainPageTextWidget(title: FirsScreenTextUtility.route, fontweight: FontWeight.bold),
+     const _mainPageTextWidget(title: FirsScreenTextUtility.route, fontweight: FontWeight.bold),
       Expanded(
         child: Center(
             child: customButtonWidget(
@@ -66,5 +66,5 @@ class _mainPageTextWidget extends StatelessWidget {
 }
 
 class paddingUtility{
-  static final EdgeInsets _buttonSymmetricPadding = EdgeInsets.symmetric(vertical: ScreenSize.dynamicHeight(0.02), horizontal: ScreenSize.dynamicWitdh(0.2));
+  static final EdgeInsets _buttonSymmetricPadding = EdgeInsets.symmetric(vertical: ScreenSize.dynamicHeight(value: 0.02), horizontal: ScreenSize.dynamicWitdh(value: 0.2));
 }

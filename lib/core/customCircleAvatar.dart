@@ -18,12 +18,12 @@ class customCircleAvatarWithDottedBorderPackage extends StatelessWidget {
           child: CircleAvatar(
             backgroundImage: AssetImage(
               imagePath.jpg("profile"),
-            ) as ImageProvider,
+            ),
           )),
     );
   }
 }
 
 class paddingUtility {
-  static final EdgeInsets circleAvatarPadding = EdgeInsets.symmetric(vertical: 5, horizontal: 15);
+  static const EdgeInsets circleAvatarPadding = EdgeInsets.symmetric(vertical: 5, horizontal: 15);
 }
