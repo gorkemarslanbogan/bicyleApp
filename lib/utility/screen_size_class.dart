@@ -12,7 +12,8 @@ static  double? pageWidth;
  }
 
  static double dynamicHeight ({double? value}){
-    if(value != null) {return (pageHeight! * value);}
+    if(value != null) {
+    return (pageHeight! * value);}
     else{return pageHeight!;}
  }
   static double dynamicWitdh ({double? value}){
