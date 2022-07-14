@@ -1,7 +1,8 @@
+
+import 'package:bcyleapp/core/widget/customCircleAvatar.dart';
+import 'package:bcyleapp/utility/textUtility.dart';
 import 'package:flutter/material.dart';
 
-import '../utility/textUtility.dart';
-import '../core/customCircleAvatar.dart';
 
 
 class appScaffold extends StatelessWidget {

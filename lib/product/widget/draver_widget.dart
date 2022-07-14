@@ -1,9 +1,9 @@
-import 'package:bcyleapp/core/customCircleAvatar.dart';
-import 'package:bcyleapp/product/NavigatorManagment.dart';
+import 'package:bcyleapp/core/widget/customCircleAvatar.dart';
+import 'package:bcyleapp/product/managment/NavigatorManagment.dart';
 import 'package:bcyleapp/view/screen/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../view/screen/see_all_lastTrip.dart';
+import '../../view/screen/see_all_lastTrip.dart';
 
 class CustomDrawerWidget extends StatelessWidget{
   const CustomDrawerWidget({ Key? key }) : super(key: key);

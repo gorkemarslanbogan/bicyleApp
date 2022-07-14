@@ -1,4 +1,4 @@
-import 'package:bcyleapp/product/Container.dart';
+import 'package:bcyleapp/product/widget/Container.dart';
 import 'package:bcyleapp/utility/screen_size_class.dart';
 import 'package:flutter/material.dart';
 

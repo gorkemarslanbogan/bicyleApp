@@ -1,15 +1,17 @@
-import 'package:bcyleapp/product/imageUtility.dart';
+import 'package:bcyleapp/product/managment/NavigatorManagment.dart';
+import 'package:bcyleapp/product/managment/imageUtility.dart';
 import 'package:bcyleapp/utility/screen_size_class.dart';
+import 'package:bcyleapp/utility/textUtility.dart';
 import 'package:bcyleapp/view/screen/HomeScreen.dart';
-import 'package:bcyleapp/product/NavigatorManagment.dart';
 import 'package:flutter/material.dart';
 import 'ElevationButtonWithRadius.dart';
-import '../utility/textUtility.dart';
 
-class mainColumnWidget extends StatelessWidget with FirsScreenTextUtility,ScreenSize {
+
+class mainColumnWidget extends StatelessWidget with FirsScreenTextUtility,ScreenSize{
   mainColumnWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    
     ScreenSize().init(context);
     final List<Widget> columnItems = [
       Expanded(

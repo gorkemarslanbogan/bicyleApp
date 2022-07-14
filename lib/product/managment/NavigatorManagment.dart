@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 
 mixin NavigatorManagment {
   static void NavigatePush(BuildContext context, Widget widget){
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (context)=> widget)
-    );
+    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> widget));
+
   }
  static void NavigatePop(BuildContext context, Widget widget){
     Navigator.of(context).pop(

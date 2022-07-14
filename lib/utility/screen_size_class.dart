@@ -11,7 +11,6 @@ static  double? pageWidth;
    pageWidth = _mediaQuery.size.width;
  }
 
- 
  static double dynamicHeight ({double? value}){
     if(value != null) {return (pageHeight! * value);}
     else{return pageHeight!;}

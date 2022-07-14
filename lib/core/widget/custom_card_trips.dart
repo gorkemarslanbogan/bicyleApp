@@ -1,8 +1,8 @@
 import 'package:bcyleapp/model/trips_model.dart';
-import 'package:bcyleapp/product/NavigatorManagment.dart';
-import 'package:bcyleapp/product/random_color.dart';
+import 'package:bcyleapp/product/managment/NavigatorManagment.dart';
+import 'package:bcyleapp/product/managment/random_color.dart';
+import 'package:bcyleapp/view/screen/trips_details.dart';
 import 'package:flutter/material.dart';
-import '../view/screen/trips_details.dart';
 import 'custom_container.dart';
 
 class lastTripCardBuilder extends StatelessWidget {

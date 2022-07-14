@@ -1,9 +1,11 @@
+import 'package:bcyleapp/core/widget/mainScrennColumn.dart';
 import 'package:bcyleapp/utility/textUtility.dart';
 import 'package:bcyleapp/view/screen/HomeScreen.dart';
-import 'package:bcyleapp/core/mainScrennColumn.dart';
 import 'package:flutter/material.dart';
-import 'package:bcyleapp/product/NavigatorManagment.dart';
 import 'package:flutter/services.dart';
+
+import 'core/theme/theme.dart';
+import 'product/managment/NavigatorManagment.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,13 +32,14 @@ class _MyAppState extends State<MyApp>{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Bcyle Drive',
-      theme: ThemeData.light().copyWith(
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.white,
-          elevation: 0,
-        ),
-        scaffoldBackgroundColor: Colors.white,
-      ),
+       theme: BcyleLightTheme().lightTheme,
+      // ThemeData.light().copyWith(
+      //   appBarTheme: const AppBarTheme(
+      //     backgroundColor: Colors.white,
+      //     elevation: 0,
+      //   ),
+      //   scaffoldBackgroundColor: Colors.white,
+      // ),
       home: Scaffold(
         appBar: _appBarWidget(context),
         body: mainColumnWidget(),

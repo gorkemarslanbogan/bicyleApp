@@ -1,4 +1,4 @@
-import 'package:bcyleapp/product/imageUtility.dart';
+import 'package:bcyleapp/product/managment/imageUtility.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 
@@ -7,6 +7,7 @@ class customCircleAvatarWithDottedBorderPackage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Padding(
       padding: paddingUtility.circleAvatarPadding,
       child: DottedBorder(

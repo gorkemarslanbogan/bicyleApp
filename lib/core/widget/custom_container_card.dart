@@ -1,7 +1,7 @@
+import 'package:bcyleapp/product/widget/Container.dart';
+import 'package:bcyleapp/utility/screen_size_class.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../product/Container.dart';
-import '../utility/screen_size_class.dart';
 import 'custom_container.dart';
 
 class customContainerCard extends StatelessWidget {

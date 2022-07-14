@@ -1,4 +1,5 @@
-import 'package:bcyleapp/product/NavigatorManagment.dart';
+
+import 'package:bcyleapp/product/managment/NavigatorManagment.dart';
 import 'package:flutter/material.dart';
 
 class customButtonWidget extends StatelessWidget with NavigatorManagment {

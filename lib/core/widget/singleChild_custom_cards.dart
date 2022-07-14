@@ -1,7 +1,6 @@
 import 'package:bcyleapp/model/trips_model.dart';
 import 'package:bcyleapp/utility/screen_size_class.dart';
 import 'package:flutter/material.dart';
-
 import 'custom_container_card.dart';
 
 

@@ -1,13 +1,14 @@
+import 'package:bcyleapp/core/widget/HomeScreenWidget.dart';
+import 'package:bcyleapp/core/widget/custom_card_trips.dart';
+import 'package:bcyleapp/core/widget/singleChild_custom_cards.dart';
+import 'package:bcyleapp/product/managment/NavigatorManagment.dart';
+import 'package:bcyleapp/product/widget/app_scaffold_widget.dart';
+import 'package:bcyleapp/product/widget/draver_widget.dart';
 import 'package:bcyleapp/utility/screen_size_class.dart';
 import 'package:bcyleapp/view/screen/see_all_lastTrip.dart';
 import 'package:flutter/material.dart';
-import 'package:bcyleapp/product/NavigatorManagment.dart';
-import '../../core/custom_card_trips.dart';
-import '../../product/app_scaffold_widget.dart';
-import '../../core/singleChild_custom_cards.dart';
-import '../../product/draver_widget.dart';
 import '../../utility/textUtility.dart';
-import '../../core/HomeScreenWidget.dart';
+
 
 class HomeScreen extends StatefulWidget with HomeScreenTextUtility {
   HomeScreen({Key? key}) : super(key: key);

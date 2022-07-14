@@ -1,6 +1,7 @@
 import 'package:bcyleapp/utility/screen_size_class.dart';
+import 'package:bcyleapp/utility/textUtility.dart';
 import 'package:flutter/material.dart';
-import '../utility/textUtility.dart';
+
 
 class ColumnWidgetHomeScreen extends StatelessWidget
     with HomeScreenTextUtility {
