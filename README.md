@@ -1,7 +1,6 @@
 # bcyleapp
 
 A new Flutter project.
-Github pull fonksiyonu değişiklik olduğunda bizim bilgisayar indirir bunu test edelim
 
 ## Getting Started
 
