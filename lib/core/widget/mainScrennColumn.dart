@@ -1,3 +1,4 @@
+import 'package:bcyleapp/product/lottie/LottieWidget.dart';
 import 'package:bcyleapp/product/managment/NavigatorManagment.dart';
 import 'package:bcyleapp/product/managment/imageUtility.dart';
 import 'package:bcyleapp/utility/screen_size_class.dart';
@@ -15,28 +16,20 @@ class mainColumnWidget extends StatelessWidget with FirsScreenTextUtility,Screen
     ScreenSize().init(context);
     final List<Widget> columnItems = [
       Expanded(
-        child: Image.asset(
-          imagePath.jpg("bicyle"),
-          fit: BoxFit.fitHeight,
+        flex: 2,
+        child: LottieSplahs()
         ),
-      ),
        SizedBox(
         height: ScreenSize.dynamicHeight(value: 0.09)
       ),
       const _mainPageTextWidget(title: FirsScreenTextUtility.makeYourRoute, fontweight: FontWeight.w400),
-      SizedBox(
-        height: ScreenSize.dynamicHeight(value: 0.02),
-      ),
+
+      SizedBox(height: ScreenSize.dynamicHeight(value: 0.02)),
+
      const _mainPageTextWidget(title: FirsScreenTextUtility.route, fontweight: FontWeight.bold),
+
       Expanded(
-        child: Center(
-            child: customButtonWidget(
-          title: FirsScreenTextUtility.ButtonText,
-          textPadding: paddingUtility._buttonSymmetricPadding,
-          onPressed: () {
-        NavigatorManagment.NavigatePush(context, HomeScreen());
-          },
-        )),
+        child: _LetsRunButton(),
       ),
     ];
     
@@ -44,6 +37,26 @@ class mainColumnWidget extends StatelessWidget with FirsScreenTextUtility,Screen
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: columnItems,
     );
+  }
+}
+
+class _LetsRunButton extends StatelessWidget {
+  const _LetsRunButton({
+    Key? key,
+  }) : super(key: key);
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: customButtonWidget(
+      title: FirsScreenTextUtility.ButtonText,
+      textPadding: paddingUtility._buttonSymmetricPadding,
+      onPressed: () {
+    NavigatorManagment.NavigatePush(context, HomeScreen());
+      },
+    ));
   }
 }
 

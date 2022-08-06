@@ -5,7 +5,9 @@ static const String ButtonText = "Let's Run";
 static const String route = "Route";
 static const String makeYourRoute = "Make Your Own";
 }
-
+class AppUtility {
+  static const String appName = "Bcyle Drive";
+}
 class HomeScreenTextUtility {
 static const String drove = "You Drove";
 static const String miles = "miles";

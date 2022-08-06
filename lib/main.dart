@@ -1,23 +1,27 @@
 import 'package:bcyleapp/core/widget/mainScrennColumn.dart';
+import 'package:bcyleapp/product/lottie/lottie-path.dart';
+import 'package:bcyleapp/product/managment/cache/shared_managment.dart';
 import 'package:bcyleapp/utility/textUtility.dart';
 import 'package:bcyleapp/view/screen/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'core/theme/theme.dart';
 import 'product/managment/NavigatorManagment.dart';
 
 Future<void> main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown])
       .then((_) {
     runApp(
+      
       const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: MyApp(),  
       ),
     );
-  });
+  }
+  );
 }
 
 class MyApp extends StatefulWidget {
@@ -31,15 +35,8 @@ class _MyAppState extends State<MyApp>{
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Bcyle Drive',
+      title: AppUtility.appName,
        theme: BcyleLightTheme().lightTheme,
-      // ThemeData.light().copyWith(
-      //   appBarTheme: const AppBarTheme(
-      //     backgroundColor: Colors.white,
-      //     elevation: 0,
-      //   ),
-      //   scaffoldBackgroundColor: Colors.white,
-      // ),
       home: Scaffold(
         appBar: _appBarWidget(context),
         body: mainColumnWidget(),

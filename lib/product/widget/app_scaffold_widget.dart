@@ -1,15 +1,27 @@
 
+import 'package:bcyleapp/core/theme/theme.dart';
 import 'package:bcyleapp/core/widget/customCircleAvatar.dart';
 import 'package:bcyleapp/utility/textUtility.dart';
 import 'package:flutter/material.dart';
 
+import '../managment/cache/shared_managment.dart';
 
 
-class appScaffold extends StatelessWidget {
+
+class appScaffold extends StatefulWidget {
    appScaffold({
     Key? key,   required this.widget, this.draverWidget, this.LeadingWidget
   }) : super(key: key);
 
+final Widget widget;
+final Widget? draverWidget;
+final Widget? LeadingWidget;
+
+  @override
+  State<appScaffold> createState() => _appScaffoldState();
+}
+
+class _appScaffoldState extends State<appScaffold> {
 List<BottomNavigationBarItem> bottomNavigationItem = [
     const BottomNavigationBarItem(
       icon: Icon(Icons.home_rounded),
@@ -23,23 +35,36 @@ List<BottomNavigationBarItem> bottomNavigationItem = [
         icon: Icon(Icons.settings_applications_sharp),
         label: HomeScreenTextUtility.settings),
   ];
-final Widget widget;
-final Widget? draverWidget;
-final Widget? LeadingWidget;
+
+@override
+void initState() {
+  super.initState();
+  themeValue = true;
+}
+
+
+late bool themeValue;
+
   @override
   Widget build(BuildContext context) {
   
-    return Scaffold(
-      drawer: draverWidget,
-      bottomNavigationBar: BottomNavigationBar(items: bottomNavigationItem),
-      appBar: AppBar(
-        leading: LeadingWidget,
-        iconTheme: const IconThemeData(color: Colors.black),
-        actions: const [
-          customCircleAvatarWithDottedBorderPackage(),
-        ],
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Bcyle Drive',
+       theme: themeValue ?
+       BcyleLightTheme().lightTheme : ThemeData.dark(),
+      home: Scaffold(
+        drawer: widget.draverWidget,
+        bottomNavigationBar: BottomNavigationBar(items: bottomNavigationItem),
+        appBar: AppBar(
+          leading: widget.LeadingWidget,
+          iconTheme: const IconThemeData(color: Colors.black),
+          actions: const [
+            customCircleAvatarWithDottedBorderPackage(),
+          ],
+        ),
+        body: widget.widget,
       ),
-      body: widget,
     );
   }
 }
