@@ -1,10 +1,12 @@
 import 'package:bcyleapp/core/widget/mainScrennColumn.dart';
 import 'package:bcyleapp/product/lottie/lottie-path.dart';
 import 'package:bcyleapp/product/managment/cache/shared_managment.dart';
+import 'package:bcyleapp/product/provider/ThemeProvider.dart';
 import 'package:bcyleapp/utility/textUtility.dart';
 import 'package:bcyleapp/view/screen/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'core/theme/theme.dart';
 import 'product/managment/NavigatorManagment.dart';
 
@@ -15,9 +17,14 @@ Future<void> main() async {
       .then((_) {
     runApp(
       
-      const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: MyApp(),  
+      ChangeNotifierProvider(
+       builder: (context,child){
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: MyApp(),  
+        );
+       },
+       create: (context) => ThemeProvider(),   
       ),
     );
   }
@@ -36,7 +43,7 @@ class _MyAppState extends State<MyApp>{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: AppUtility.appName,
-       theme: BcyleLightTheme().lightTheme,
+      theme: context.watch<ThemeProvider>().currentTheme,
       home: Scaffold(
         appBar: _appBarWidget(context),
         body: mainColumnWidget(),

@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 class BcyleLightTheme {
   final ThemeData lightTheme = ThemeData(
-   appBarTheme: AppBarTheme(
+   appBarTheme: const AppBarTheme(
     backgroundColor: Colors.white,
     elevation: 0,
    ),
    scaffoldBackgroundColor: Colors.white,
-   buttonTheme: ButtonThemeData(
+   buttonTheme: const ButtonThemeData(
     buttonColor: Colors.black,
    )
   );

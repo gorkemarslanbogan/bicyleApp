@@ -1,6 +1,5 @@
 import 'package:bcyleapp/core/widget/CustomsheetWidget.dart';
 import 'package:bcyleapp/model/trips_model.dart';
-import 'package:bcyleapp/product/managment/NavigatorManagment.dart';
 import 'package:bcyleapp/product/managment/cache/SharedList.dart';
 import 'package:bcyleapp/product/managment/cache/shared_managment.dart';
 import 'package:bcyleapp/product/managment/random_color.dart';

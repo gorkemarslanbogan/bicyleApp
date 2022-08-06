@@ -3,8 +3,10 @@ import 'package:bcyleapp/core/theme/theme.dart';
 import 'package:bcyleapp/core/widget/customCircleAvatar.dart';
 import 'package:bcyleapp/utility/textUtility.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../managment/cache/shared_managment.dart';
+import '../provider/ThemeProvider.dart';
 
 
 
@@ -35,24 +37,13 @@ List<BottomNavigationBarItem> bottomNavigationItem = [
         icon: Icon(Icons.settings_applications_sharp),
         label: HomeScreenTextUtility.settings),
   ];
-
-@override
-void initState() {
-  super.initState();
-  themeValue = true;
-}
-
-
-late bool themeValue;
-
   @override
   Widget build(BuildContext context) {
   
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Bcyle Drive',
-       theme: themeValue ?
-       BcyleLightTheme().lightTheme : ThemeData.dark(),
+       theme: context.watch<ThemeProvider>().currentTheme,
       home: Scaffold(
         drawer: widget.draverWidget,
         bottomNavigationBar: BottomNavigationBar(items: bottomNavigationItem),
